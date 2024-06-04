@@ -1,0 +1,15 @@
+{
+  "name": "build-a-university-certification-nft",
+  "scripts": {
+    "start:server": "node server.js",
+    "start:client": "cd client && npm run dev -- --force"
+  },
+  "type": "module",
+  "dependencies": {
+    "@metaplex-foundation/js": "^0.20.1",
+    "@solana/spl-token": "^0.4.6",
+    "@solana/web3.js": "^1.91.8",
+    "cors": "2.8.5",
+    "express": "4.19.2"
+  }
+}
