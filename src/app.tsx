@@ -7,7 +7,7 @@ import {
   mintToken as camperMintToken,
   uploadFile as camperUploadFile,
   getNFTs as camperGetNFTs
-} from '../../index.js';
+} from './index.js';
 import './app.css';
 import { toMetaplexFile } from '@metaplex-foundation/js';
 

@@ -2,6 +2,8 @@
 
 NFT-issuing system for Solana Curriculum in [freeCodeCampWeb3](https://web3.freecodecamp.org/).
 
+[Live Website](https://chiefwoods.github.io/university-certification-nft/)
+
 [Source Repository](https://github.com/ChiefWoods/university-certification-nft)
 
 ## Built With
@@ -38,12 +40,6 @@ solana-install update
 npm install npm@latest -g
 ```
 
-2. Set configuration to use localhost as cluster
-
-```
-solana config set --url localhost
-```
-
 ### Setup
 
 1. Clone the repository
@@ -58,52 +54,10 @@ git clone https://github.com/ChiefWoods/university-certification-nft.git
 npm install
 ```
 
-3. Create dump of Metaplex Token Program
+3. Start development server
 
 ```
-solana program dump --url mainnet-beta metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s ./mlp_token.so
-```
-
-4. Deploy program to local cluster
-
-```
-solana program deploy ./mlp_token.so --final
-```
-
-5. In another terminal, start local cluster with program pre-deployed
-
-```
-solana-test-validator --bpf-program metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s ./mlp_token.so --reset
-```
-
-6. Create keypairs
-
-```
-solana-keygen new -o solana-university-wallet.json
-```
-
-```
-solana-keygen new -o student-1.json
-```
-
-```
-solana-keygen new -o student-2.json
-```
-
-7. Set config keypair
-
-```
-solana config set --keypair solana-university-wallet.json
-```
-
-8. Start server and client in two separate terminals
-
-```
-npm run start:server
-```
-
-```
-npm run start:client
+npm run dev
 ```
 
 ## Issues
