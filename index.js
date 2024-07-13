@@ -2,24 +2,15 @@ import { Connection, Keypair } from "@solana/web3.js";
 import { createMint, getOrCreateAssociatedTokenAccount, TOKEN_PROGRAM_ID } from "@solana/spl-token";
 import { Metaplex, keypairIdentity } from "@metaplex-foundation/js";
 import { localStorage } from "./utils.js";
+import fs from "fs";
 
-let walletArr;
-
-try {
-  // use this for freeCodeCamp test
-  const fs = await import('fs');
-  walletArr = JSON.parse(fs.readFileSync('./build-a-university-certification-nft/solana-university-wallet.json', 'utf8'));
-} catch {
-  // use this for production
-  walletArr = (await import('./solana-university-wallet.json')).default;
-}
-
+const walletArr = JSON.parse(fs.readFileSync('./build-a-university-certification-nft/solana-university-wallet.json', 'utf8'));
 const walletKeypair = Keypair.fromSecretKey(new Uint8Array(walletArr));
 const connection = new Connection('http://127.0.0.1:8899', 'confirmed');
 const metaplex = Metaplex
   .make(connection)
   .use(keypairIdentity(walletKeypair))
-  .use(localStorage({ baseUrl: 'http://127.0.0.1:3002/' }));
+  .use(localStorage({ baseUrl: 'http://127.0.0.1:3002' }));
 
 export async function uploadFile({ metaplexFile, payer }) {
   const image = await metaplex.storage().upload(metaplexFile);

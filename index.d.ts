@@ -1,4 +1,4 @@
-import { FindNftsByOwnerOutput, MetaplexFile, MintNftOutput, Nft } from '@metaplex-foundation/js';
+import { FindNftsByOwnerOutput, MetaplexFile, Nft } from '@metaplex-foundation/js';
 import { Account, createMint } from '@solana/spl-token';
 import {
   AccountInfo,
@@ -49,12 +49,10 @@ declare function mintToken({
   ownerAddress: PublicKey;
   year: number;
   uri: string;
-// }): Promise<MintNftOutput>; // original return type may be incorrect
 }): Promise<Nft>;
 
 declare function getNFTs({
   ownerAddress
 }: {
   ownerAddress: PublicKey;
-// }): Promise<MintNftOutput[]>; // original return type may be incorrect
 }): Promise<FindNftsByOwnerOutput[]>;

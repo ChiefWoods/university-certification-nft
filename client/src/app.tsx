@@ -67,7 +67,6 @@ export function App() {
         mintAddress,
         ownerAddress
       });
-      console.log(tokenAccount);
       setOutput(tokenAccount.address.toBase58());
     } catch (e) {
       console.warn(e);
@@ -238,9 +237,6 @@ export function App() {
                     if (previewImg.current) {
                       previewImg.current.src = ev.target.result as string;
                     }
-                  }
-                  if (reader.result) {
-                    console.log(reader.result);
                   }
                 };
                 reader.readAsDataURL(file);

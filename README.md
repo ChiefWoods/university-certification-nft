@@ -90,13 +90,13 @@ solana-keygen new -o student-1.json
 solana-keygen new -o student-2.json
 ```
 
-7. Set keypair for config
+7. Set config keypair
 
 ```
 solana config set --keypair solana-university-wallet.json
 ```
 
-8. Start server and client
+8. Start server and client in two separate terminals
 
 ```
 npm run start:server
