@@ -2,6 +2,8 @@
 
 NFT-issuing system for Solana Curriculum in [freeCodeCampWeb3](https://web3.freecodecamp.org/).
 
+[Live Website](https://chiefwoods.github.io/university-certification-nft/)
+
 [Source Repository](https://github.com/ChiefWoods/university-certification-nft)
 
 ## Built With
