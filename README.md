@@ -14,9 +14,9 @@ NFT-issuing system for Solana Curriculum in [freeCodeCampWeb3](https://web3.free
 
 ### Libraries
 
-- [Solana JavaScript SDK](https://solana-labs.github.io/solana-web3.js/)
-- [Solana SPL Token](https://solana-labs.github.io/solana-program-library/token/js/index.html)
-- [Metaplex JavaScript SDK](https://metaplex-foundation.github.io/js/index.html)
+- [@solana/web3.js](https://solana-labs.github.io/solana-web3.js/)
+- [@solana/spl-token](https://solana-labs.github.io/solana-program-library/token/js/index.html)
+- [@metaplex-foundation/js](https://metaplex-foundation.github.io/js/index.html)
 
 ### Runtime
 
@@ -34,16 +34,7 @@ NFT-issuing system for Solana Curriculum in [freeCodeCampWeb3](https://web3.free
 
 ```
 solana-install update
-```
-
-```
 npm install npm@latest -g
-```
-
-2. Set configuration to use localhost as cluster
-
-```
-solana config set --url localhost
 ```
 
 ### Setup
@@ -66,43 +57,41 @@ npm install
 solana program dump --url mainnet-beta metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s ./mlp_token.so
 ```
 
-4. Deploy program to local cluster
-
-```
-solana program deploy ./mlp_token.so --final
-```
-
-5. In another terminal, start local cluster with program pre-deployed
+4. In another terminal, start validator with program pre-deployed
 
 ```
 solana-test-validator --bpf-program metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s ./mlp_token.so --reset
 ```
 
-6. Create keypairs
+5. Generate keypairs
 
 ```
 solana-keygen new -o solana-university-wallet.json
-```
-
-```
 solana-keygen new -o student-1.json
-```
-
-```
 solana-keygen new -o student-2.json
 ```
 
-7. Set config keypair
+6. Set configuration to use localhost
 
 ```
-solana config set --keypair solana-university-wallet.json
+solana config set -u l
 ```
 
-8. Start server and client in two separate terminals
+7. Airdrop some SOL to account
+
+```
+solana airdrop 5 -k solana-university-wallet.json
+solana airdrop 5 -k student-1.json
+solana airdrop 5 -k student-2.json
+```
+
+8. Start Node server
 
 ```
 npm run start:server
 ```
+
+9. In another terminal, start Vite client
 
 ```
 npm run start:client
