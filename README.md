@@ -14,9 +14,9 @@ NFT-issuing system for Solana Curriculum in [freeCodeCampWeb3](https://web3.free
 
 ### Libraries
 
-- [Solana JavaScript SDK](https://solana-labs.github.io/solana-web3.js/)
-- [Solana SPL Token](https://solana-labs.github.io/solana-program-library/token/js/index.html)
-- [Metaplex JavaScript SDK](https://metaplex-foundation.github.io/js/index.html)
+- [@solana/web3.js](https://solana-labs.github.io/solana-web3.js/)
+- [@solana/spl-token](https://solana-labs.github.io/solana-program-library/token/js/index.html)
+- [@metaplex-foundation/js](https://metaplex-foundation.github.io/js/index.html)
 
 ### Runtime
 
@@ -34,9 +34,6 @@ NFT-issuing system for Solana Curriculum in [freeCodeCampWeb3](https://web3.free
 
 ```
 solana-install update
-```
-
-```
 npm install npm@latest -g
 ```
 
@@ -54,7 +51,29 @@ git clone https://github.com/ChiefWoods/university-certification-nft.git
 npm install
 ```
 
-3. Start development server
+3. Generate keypairs
+
+```
+solana-keygen new -o solana-university-wallet.json
+solana-keygen new -o student-1.json
+solana-keygen new -o student-2.json
+```
+
+4. Set configuration to use devnet
+
+```
+solana config set -u d
+```
+
+5. Airdrop some SOL to account
+
+```
+solana airdrop 5 -k solana-university-wallet.json
+solana airdrop 5 -k student-1.json
+solana airdrop 5 -k student-2.json
+```
+
+6. Start Vite client
 
 ```
 npm run dev
